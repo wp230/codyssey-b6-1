@@ -1,0 +1,29 @@
+mysql> SELECT * FROM rider LIMIT 3;
+ERROR 1046 (3D000): No database selected
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| codyssey_db        |
+| information_schema |
+| mysns              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use codyssey_db
+Database changed
+mysql> SELECT * FROM rider LIMIT 3;
++----------+--------+-------------------------+-----------------+---------------------+
+| rider_id | name   | email                   | membership_type | joined_at           |
++----------+--------+-------------------------+-----------------+---------------------+
+|        1 | 김민수 | minsu.kim@example.com   | 정기권          | 2026-01-05 09:15:00 |
+|        2 | 이서연 | seoyeon.lee@example.com | 정기권          | 2026-01-11 14:20:00 |
+|        3 | 박준호 | junho.park@example.com  | 일일권          | 2026-02-02 11:05:00 |
++----------+--------+-------------------------+-----------------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> notee

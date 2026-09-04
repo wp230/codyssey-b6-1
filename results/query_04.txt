@@ -1,0 +1,23 @@
+mysql> 
+mysql> SELECT
+    ->     rental_id,
+    ->     rider_id,
+    ->     bike_id,
+    ->     distance_m
+    -> FROM rental
+    -> WHERE distance_m IS NOT NULL
+    -> ORDER BY distance_m DESC
+    -> LIMIT 5;
++-----------+----------+---------+------------+
+| rental_id | rider_id | bike_id | distance_m |
++-----------+----------+---------+------------+
+|         7 |        6 |       8 |       8500 |
+|         3 |        3 |       3 |       7100 |
+|        12 |       10 |       4 |       6200 |
+|        14 |        4 |       7 |       5800 |
+|        10 |        9 |       1 |       5400 |
++-----------+----------+---------+------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+mysql> notee

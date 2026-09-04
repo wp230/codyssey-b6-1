@@ -1,0 +1,32 @@
+mysql> 
+mysql> SELECT
+    ->     r.rental_id,
+    ->     rd.name AS rider_name,
+    ->     r.rented_at,
+    ->     r.rental_status
+    -> FROM rental r
+    -> INNER JOIN rider rd
+    ->     ON r.rider_id = rd.rider_id;
++-----------+------------+---------------------+---------------+
+| rental_id | rider_name | rented_at           | rental_status |
++-----------+------------+---------------------+---------------+
+|         1 | 김민수     | 2026-09-01 08:10:00 | completed     |
+|         6 | 김민수     | 2026-09-02 18:10:00 | completed     |
+|         2 | 이서연     | 2026-09-01 09:05:00 | completed     |
+|        11 | 이서연     | 2026-09-04 09:10:00 | completed     |
+|         3 | 박준호     | 2026-09-01 10:20:00 | completed     |
+|        13 | 박준호     | 2026-09-04 13:00:00 | completed     |
+|         4 | 최유진     | 2026-09-01 12:00:00 | completed     |
+|        14 | 최유진     | 2026-09-04 15:10:00 | completed     |
+|         5 | 정하늘     | 2026-09-02 07:45:00 | completed     |
+|        15 | 정하늘     | 2026-09-04 16:00:00 | rented        |
+|         7 | 강도윤     | 2026-09-03 08:30:00 | completed     |
+|         8 | 윤지우     | 2026-09-03 14:15:00 | completed     |
+|         9 | 한예린     | 2026-09-03 17:00:00 | completed     |
+|        10 | 오시우     | 2026-09-04 06:50:00 | completed     |
+|        12 | 임수빈     | 2026-09-04 11:40:00 | completed     |
++-----------+------------+---------------------+---------------+
+15 rows in set (0.00 sec)
+
+mysql> 
+mysql> notee

@@ -1,0 +1,30 @@
+mysql> 
+mysql> SELECT
+    ->     b.bike_id,
+    ->     b.bike_code,
+    ->     SUM(r.distance_m) AS total_distance_m
+    -> FROM bike b
+    -> INNER JOIN rental r
+    ->     ON b.bike_id = r.bike_id
+    -> WHERE r.distance_m IS NOT NULL
+    -> GROUP BY
+    ->     b.bike_id,
+    ->     b.bike_code
+    -> ORDER BY total_distance_m DESC;
++---------+----------------+------------------+
+| bike_id | bike_code      | total_distance_m |
++---------+----------------+------------------+
+|       4 | SEOUL-BIKE-004 |            11300 |
+|       7 | SEOUL-BIKE-007 |             9700 |
+|       1 | SEOUL-BIKE-001 |             9600 |
+|       8 | SEOUL-BIKE-008 |             8500 |
+|       3 | SEOUL-BIKE-003 |             7100 |
+|       6 | SEOUL-BIKE-006 |             5500 |
+|       2 | SEOUL-BIKE-002 |             5300 |
+|      10 | SEOUL-BIKE-010 |             4900 |
+|       9 | SEOUL-BIKE-009 |             4600 |
++---------+----------------+------------------+
+9 rows in set (0.00 sec)
+
+mysql> 
+mysql> notee

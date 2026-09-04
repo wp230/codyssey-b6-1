@@ -1,0 +1,19 @@
+mysql> 
+mysql> CREATE INDEX idx_rental_rented_at
+    -> ON rental (rented_at);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> 
+mysql> SHOW INDEX
+    -> FROM rental
+    -> WHERE Key_name = 'idx_rental_rented_at';
++--------+------------+----------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table  | Non_unique | Key_name             | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++--------+------------+----------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| rental |          1 | idx_rental_rented_at |            1 | rented_at   | A         |          14 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
++--------+------------+----------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> notee

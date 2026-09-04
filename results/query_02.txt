@@ -1,0 +1,24 @@
+mysql> 
+mysql> SELECT
+    ->     rental_id,
+    ->     rider_id,
+    ->     bike_id,
+    ->     distance_m,
+    ->     rental_status
+    -> FROM rental
+    -> WHERE distance_m >= 5000
+    ->   AND rental_status = 'completed';
++-----------+----------+---------+------------+---------------+
+| rental_id | rider_id | bike_id | distance_m | rental_status |
++-----------+----------+---------+------------+---------------+
+|         3 |        3 |       3 |       7100 | completed     |
+|         4 |        4 |       4 |       5100 | completed     |
+|         7 |        6 |       8 |       8500 | completed     |
+|        10 |        9 |       1 |       5400 | completed     |
+|        12 |       10 |       4 |       6200 | completed     |
+|        14 |        4 |       7 |       5800 | completed     |
++-----------+----------+---------+------------+---------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+mysql> notee

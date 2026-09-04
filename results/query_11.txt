@@ -1,0 +1,31 @@
+mysql> 
+mysql> SELECT
+    ->     s.station_id,
+    ->     s.station_name,
+    ->     AVG(r.distance_m) AS avg_distance_m
+    -> FROM station s
+    -> INNER JOIN rental r
+    ->     ON s.station_id = r.rental_station_id
+    -> WHERE r.distance_m IS NOT NULL
+    -> GROUP BY
+    ->     s.station_id,
+    ->     s.station_name
+    -> ORDER BY avg_distance_m DESC;
++------------+----------------------------+----------------+
+| station_id | station_name               | avg_distance_m |
++------------+----------------------------+----------------+
+|         10 | 노원역 5번출구             |      6200.0000 |
+|          7 | 강남역 10번출구            |      5850.0000 |
+|          3 | 신촌역 4번출구             |      5500.0000 |
+|          4 | 여의나루역 1번출구         |      5450.0000 |
+|          6 | 광화문역 6번출구           |      5400.0000 |
+|          9 | 건대입구역 1번출구         |      4900.0000 |
+|          8 | 잠실역 2번출구             |      4600.0000 |
+|          1 | 홍대입구역 2번출구         |      3250.0000 |
+|          2 | 합정역 5번출구             |      2800.0000 |
+|          5 | 서울역 12번출구            |      2500.0000 |
++------------+----------------------------+----------------+
+10 rows in set (0.00 sec)
+
+mysql> 
+mysql> notee
